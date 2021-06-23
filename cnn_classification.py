@@ -125,7 +125,7 @@ model.compile(loss='binary_crossentropy',
 history = model.fit_generator(
     train_generator,
     steps_per_epoch=100,
-    epochs=30,
+    epochs=2,
     validation_data=validation_generator,
     validation_steps=50)
 model.save('cnn_binary_classification.h5')
@@ -138,8 +138,10 @@ for img in range(500):
     cat_img = load_image(cat_img_path)
     dog_img = load_image(dog_img_path)
 
-    print('cat : ' + str(model.predict(cat_img)))
-    print('dog : ' + str(model.predict(dog_img)))
+    print('cat : ' + str(model.predict(cat_img)) + ' : correctly predicted :-)' if model.predict(
+        cat_img) < 5.0 else ' : Failed')
+    print('dog : ' + str(model.predict(dog_img)) + ' : correctly predicted :-)' if model.predict(
+        dog_img) < 5.0 else ' : Failed')
 
 # Optional - For Development and Visualisation purposes
 # visualize()
