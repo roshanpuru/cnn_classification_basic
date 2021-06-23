@@ -130,15 +130,16 @@ history = model.fit_generator(
     validation_steps=50)
 model.save('cnn_binary_classification.h5')
 
-#Load and Convert the image and make prediction
-cat_img_path = './data/test/cats/cat.1501.jpg'
-dog_img_path = './data/test/dogs/dog.1501.jpg'
+# Load and Convert the image and make prediction
+for img in range(500):
+    cat_img_path = './data/test/cats/cat.' + str(1500 + img) + '.jpg'
+    dog_img_path = './data/test/dogs/dog.' + str(1500 + img) + '.jpg'
 
-cat_img = load_image(cat_img_path)
-dog_img = load_image(dog_img_path)
+    cat_img = load_image(cat_img_path)
+    dog_img = load_image(dog_img_path)
 
-print(model.predict(cat_img))
-print(model.predict(dog_img))
+    print('cat : ' + str(model.predict(cat_img)))
+    print('dog : ' + model.predict(dog_img))
 
 # Optional - For Development and Visualisation purposes
 # visualize()
