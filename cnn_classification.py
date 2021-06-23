@@ -125,7 +125,7 @@ model.compile(loss='binary_crossentropy',
 history = model.fit_generator(
     train_generator,
     steps_per_epoch=100,
-    epochs=2,
+    epochs=30,
     validation_data=validation_generator,
     validation_steps=50)
 model.save('cnn_binary_classification.h5')
