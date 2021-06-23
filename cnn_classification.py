@@ -139,7 +139,7 @@ for img in range(500):
     dog_img = load_image(dog_img_path)
 
     print('cat : ' + str(model.predict(cat_img)))
-    print('dog : ' + model.predict(dog_img))
+    print('dog : ' + str(model.predict(dog_img)))
 
 # Optional - For Development and Visualisation purposes
 # visualize()
