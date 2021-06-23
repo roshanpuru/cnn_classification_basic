@@ -138,10 +138,10 @@ for img in range(500):
     cat_img = load_image(cat_img_path)
     dog_img = load_image(dog_img_path)
 
-    print('cat : ' + str(model.predict(cat_img)) + ' : correctly predicted :-)' if model.predict(
+    print('cat : ' + str(model.predict(cat_img_path)) + ' : correctly predicted :-)' if model.predict(
         cat_img) < 0.5 else ' : Failed' + cat_img)
     print('dog : ' + str(model.predict(dog_img)) + ' : correctly predicted :-)' if model.predict(
-        dog_img) > 0.5 else ' : Failed' + dog_img)
+        dog_img) > 0.5 else ' : Failed' + dog_img_path)
 
 # Optional - For Development and Visualisation purposes
 # visualize()
