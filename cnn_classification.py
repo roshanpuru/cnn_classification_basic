@@ -139,9 +139,9 @@ for img in range(500):
     dog_img = load_image(dog_img_path)
 
     print('cat : ' + str(model.predict(cat_img)) + ' : correctly predicted :-)' if model.predict(
-        cat_img) < 5.0 else ' : Failed')
+        cat_img) < 0.5 else ' : Failed')
     print('dog : ' + str(model.predict(dog_img)) + ' : correctly predicted :-)' if model.predict(
-        dog_img) > 5.0 else ' : Failed')
+        dog_img) > 0.5 else ' : Failed')
 
 # Optional - For Development and Visualisation purposes
 # visualize()
